@@ -24,7 +24,7 @@ public class TextChunk {
     private String lang;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "status", nullable = false, length = 50)
     private TaskStatus status;
 
     @Column(name = "chunk_order", nullable = false)

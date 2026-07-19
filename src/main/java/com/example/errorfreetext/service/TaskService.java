@@ -1,21 +1,14 @@
 package com.example.errorfreetext.service;
 
-import com.example.errorfreetext.mapper.TaskMapper;
-import com.example.errorfreetext.repository.TaskRepository;
-import org.springframework.stereotype.Service;
+import com.example.errorfreetext.dto.CreationTaskRequest;
+import com.example.errorfreetext.dto.TaskResponse;
+import java.util.UUID;
 
-@Service
-public class TaskService {
 
-    private final TaskRepository taskRepository;
-    private final TaskMapper taskMapper;
+public interface TaskService {
 
-    public TaskService(TaskRepository taskRepository, TaskMapper taskMapper) {
-        this.taskRepository = taskRepository;
-        this.taskMapper = taskMapper;
-    }
+    UUID createTask(CreationTaskRequest request);
 
-//    public void test() {
-//        taskRepository.save();
-//    }
+    TaskResponse getTaskById(UUID id);
+
 }
