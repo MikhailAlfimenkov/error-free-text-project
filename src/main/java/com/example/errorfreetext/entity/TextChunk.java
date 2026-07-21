@@ -1,11 +1,18 @@
 package com.example.errorfreetext.entity;
 
+import com.example.errorfreetext.enums.Status;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.UUID;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "text_chunks")
+@NoArgsConstructor
 public class TextChunk {
     @Id
     private UUID id;
@@ -25,68 +32,14 @@ public class TextChunk {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, length = 50)
-    private TaskStatus status;
+    private Status status;
 
     @Column(name = "chunk_order", nullable = false)
     private Integer chunkOrder;
 
-    public TextChunk() {
+    @Column(name = "ignore_digits")
+    private boolean ignoreDigits;
 
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public Task getTask() {
-        return task;
-    }
-
-    public String getTextValue() {
-        return textValue;
-    }
-
-    public String getCorrectedValue() {
-        return correctedValue;
-    }
-
-    public String getLang() {
-        return lang;
-    }
-
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    public Integer getChunkOrder() {
-        return chunkOrder;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public void setTask(Task task) {
-        this.task = task;
-    }
-
-    public void setTextValue(String textValue) {
-        this.textValue = textValue;
-    }
-
-    public void setCorrectedValue(String correctedValue) {
-        this.correctedValue = correctedValue;
-    }
-
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
-
-    public void setStatus(TaskStatus status) {
-        this.status = status;
-    }
-
-    public void setChunkOrder(Integer chunkOrder) {
-        this.chunkOrder = chunkOrder;
-    }
+    @Column(name = "ignore_urls")
+    private boolean ignoreUrls;
 }

@@ -1,6 +1,6 @@
 package com.example.errorfreetext.dto;
 
-import com.example.errorfreetext.entity.TaskStatus;
+import com.example.errorfreetext.enums.Status;
 import java.util.UUID;
 
 public class TextChunkResponse {
@@ -8,7 +8,7 @@ public class TextChunkResponse {
     private String textValue;
     private String correctedValue;
     private String lang;
-    private TaskStatus status;
+    private Status status;
     private Integer chunkOrder;
 
     public TextChunkResponse() {
@@ -31,7 +31,7 @@ public class TextChunkResponse {
         return lang;
     }
 
-    public TaskStatus getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -55,7 +55,7 @@ public class TextChunkResponse {
         this.lang = lang;
     }
 
-    public void setStatus(TaskStatus status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
