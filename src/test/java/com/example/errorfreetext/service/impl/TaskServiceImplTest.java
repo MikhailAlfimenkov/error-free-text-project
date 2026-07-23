@@ -1,14 +1,14 @@
 package com.example.errorfreetext.service.impl;
 
-import com.example.errorfreetext.client.exception.TaskNotFoundException;
+import com.example.errorfreetext.exception.TaskNotFoundException;
 import com.example.errorfreetext.dto.CreationTaskRequest;
 import com.example.errorfreetext.dto.TaskResponse;
 import com.example.errorfreetext.entity.Task;
 import com.example.errorfreetext.enums.Status;
+import com.example.errorfreetext.mapper.TaskMapper;
 import com.example.errorfreetext.repository.TaskRepository;
 import com.example.errorfreetext.service.ChunkOptionsService;
 import com.example.errorfreetext.service.ChunkTextSplitter;
-import com.example.errorfreetext.service.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,6 +33,8 @@ class TaskServiceImplTest {
     private ChunkOptionsService chunkOptionsService;
     @Mock
     private ChunkTextSplitter chunkTextSplitter;
+    @Mock
+    private TaskMapper taskMapper;
 
     @InjectMocks
     private TaskServiceImpl taskService;
@@ -65,7 +67,12 @@ class TaskServiceImplTest {
         task.setId(taskId);
         task.setStatus(Status.NEW);
 
+        TaskResponse expectedResponse = new TaskResponse();
+        expectedResponse.setId(taskId);
+        expectedResponse.setStatus(Status.NEW);
+
         when(taskRepository.findByIdWithChunks(taskId)).thenReturn(Optional.of(task));
+        when(taskMapper.toTaskResponse(task)).thenReturn(expectedResponse);
 
         TaskResponse response = taskService.getTaskById(taskId);
 

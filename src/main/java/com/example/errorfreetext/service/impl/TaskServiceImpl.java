@@ -1,6 +1,6 @@
 package com.example.errorfreetext.service.impl;
 
-import com.example.errorfreetext.client.exception.TaskNotFoundException;
+import com.example.errorfreetext.exception.TaskNotFoundException;
 import com.example.errorfreetext.dto.CreationTaskRequest;
 import com.example.errorfreetext.dto.TaskResponse;
 import com.example.errorfreetext.entity.Task;

@@ -1,7 +1,7 @@
-package com.example.errorfreetext.client.exception.decoder;
+package com.example.errorfreetext.exception.decoder;
 
 
-import com.example.errorfreetext.client.exception.YandexApiException;
+import com.example.errorfreetext.exception.YandexApiException;
 import feign.Response;
 import feign.Util;
 import feign.codec.ErrorDecoder;
