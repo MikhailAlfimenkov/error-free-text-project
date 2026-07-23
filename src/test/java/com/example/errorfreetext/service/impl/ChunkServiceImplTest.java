@@ -1,7 +1,7 @@
 package com.example.errorfreetext.service.impl;
 
 import com.example.errorfreetext.client.YandexSpellerClient;
-import com.example.errorfreetext.client.exception.YandexApiException;
+import com.example.errorfreetext.exception.YandexApiException;
 import com.example.errorfreetext.dto.SpellResult;
 import com.example.errorfreetext.entity.Task;
 import com.example.errorfreetext.entity.TextChunk;

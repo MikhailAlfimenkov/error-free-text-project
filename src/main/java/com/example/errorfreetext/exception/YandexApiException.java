@@ -1,4 +1,4 @@
-package com.example.errorfreetext.client.exception;
+package com.example.errorfreetext.exception;
 
 public class YandexApiException extends AppException {
     public YandexApiException(String message) {

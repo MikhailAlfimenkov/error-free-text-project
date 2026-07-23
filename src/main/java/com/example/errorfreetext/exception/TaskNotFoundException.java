@@ -1,4 +1,4 @@
-package com.example.errorfreetext.client.exception;
+package com.example.errorfreetext.exception;
 
 import java.util.UUID;
 

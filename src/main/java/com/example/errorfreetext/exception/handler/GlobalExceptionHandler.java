@@ -1,7 +1,8 @@
-package com.example.errorfreetext.client.exception;
+package com.example.errorfreetext.exception.handler;
 
 
 import com.example.errorfreetext.dto.ErrorResponse;
+import com.example.errorfreetext.exception.AppException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

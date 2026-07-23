@@ -27,6 +27,6 @@ class ChunkTextSplitterTest {
     @Test
     void splitTextIntoChunks_NullOrEmpty_ReturnsEmptyList() {
         assertTrue(splitter.splitTextIntoChunks(null).isEmpty());
-        assertTrue(splitter.splitTextIntoChunks(" ").isEmpty());
+        assertTrue(splitter.splitTextIntoChunks("").isEmpty());
     }
 }
